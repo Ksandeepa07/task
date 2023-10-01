@@ -9,24 +9,31 @@
 <body>
 
 
-  <section class="container mt-3">
-    <section class="row">
-        <!--Case One-->
-        <div class="col">
-            <h1>Hello There How are you.?</h1>
-            <input id="txt" class="form-control" type="text" placeholder="Input Something">
-            <button id="btn1" class="mt-2 btn btn-danger">Change Text</button>
-        </div>
-
-        <!--Case Two-->
-        <div class="col">
-            <h1>Input an Image Url</h1>
-            <input id="url" class="form-control" type="url" placeholder="Input Image URL">
-            <div id="img" style="height: 50vh" class="mt-2 border shadow"></div>
-            <button id="btn2" class="mt-2 btn btn-danger">Change Image</button>
-        </div>
-    </section>
+  <section class="container">
+    <h1>Task Generator.!</h1>
+   <div class="row">
+       <div class="col-4">
+           <input id="txt" class="form-control" type="text" placeholder="Input a Task">
+           <button id="btn" class="btn btn-danger mt-2">Add Task</button>
+       </div>
+       <div class="offset-1 col-3 shadow overflow-x-hidden" style="height: 70vh">
+           <ol id="list" class="list-group p-2">
+               <li class="list-group-item">Task One</li>
+           </ol>
+       </div>
+   </div>
 </section>
+
+
+
+<script>
+//Bind an event for Change Text Btn
+//Get Input Text Value
+//Create a list element
+//Add it to the Ordered List
+
+
+</script>
 
 <script>
     //Case One
@@ -50,14 +57,47 @@
 
 
 
-   document.querySelector("input").addEventListener('keyup', (event) => {
-    document.querySelector("h1").innerText= document.querySelector("input").value;
-   })
+  //  document.querySelector("input").addEventListener('keyup', (event) => {
+  //   document.querySelector("h1").innerText= document.querySelector("input").value;
+  //  })
   
-    document.querySelector("button").addEventListener("click",function(){
-      document.querySelector("h1").style.color="red";
+  //   document.querySelector("button").addEventListener("click",function(){
+  //     document.querySelector("h1").style.color="red";
       
-    })
+  //   })
+
+
+
+  //   document.querySelector("#btn2").addEventListener("click",function(){
+  //     document.querySelector("#img").style.backgroundRepeat='no-repeat';
+  //     document.querySelector("#img").style.background='url('+document.querySelector("#url").value+')';
+      
+  //   })
+
+
+
+   let btn=document.querySelector("#btn");
+let ol=document.querySelector("#list");
+
+btn.addEventListener("click",function (){
+    let typInp=document.querySelector("#txt").value;
+
+    
+
+    //let's create new list item
+    let li=document.createElement("li");
+
+   
+    li.setAttribute("class","list-group-item");
+
+   
+    li.textContent=typInp;
+
+    
+    ol.append(li);//added newly created list to the selected ol
+   
+})
+
 
 
   </script>
